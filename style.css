@@ -18,10 +18,27 @@ body{
     font-size: var(--fs-body);
 }
 
-img{
+/* img{
     width: 100%;
-}
+} */
 
 .slide-container{
+    
+    padding: 6rem 7rem; */
+    border: 2px solid black;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+     padding: 2rem; 
+    background-image: url(/images/pattern-bg.svg);
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-size: contain;
+}
 
+
+    .slide2{
+    display: none;
 }
