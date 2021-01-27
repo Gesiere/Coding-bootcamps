@@ -1,54 +1,56 @@
-let slides = document.querySelectorAll('.slides');
-const prevBtn = document.querySelector('.prev-btn');
-const nextBtn = document.querySelector('.next-btn');
 
-let index = 0;
-startSlide(index)
+const sliders = document.querySelectorAll('.slide');
+const prevBtn = document.querySelector('.prev');
+const nextBtn = document.querySelector('.next');
 
-
-
-nextBtn.addEventListener('click', () => {
-    if(index > slides.length - 1){
+nextBtn.addEventListener('click',() => {
+    if(index > sliders.length - 1){
         index = 0
     }
-    nextSlide()
+    slideRight()
 })
+
 prevBtn.addEventListener('click', () => {
     if (index < 0) {
-        index = slides.length -1
+        index = sliders.length - 1
     }
-    prevSlide()
+    slideLeft()
 })
 
 
 
+let index = 0;
 
-
-function reset(index) {
-    slides.forEach(slide => {
+function reset() {
+    sliders.forEach(slide => {
         slide.style.display = 'none'
     })
+    sliders[index].style.display = 'flex'
+}
+
+function slideRight() {
+    reset()
+    sliders[index].style.display = 'flex';
+    index++;
+}
+
+function slideLeft() {
+    reset()
+    sliders[index].style.display = 'flex';
+    index--;
 }
 
 
-function startSlide(index) {
-    reset();
-    slides[index].style.display = 'flex';
-}
 
 
 
-function nextSlide() {
-    reset();
-    slides[index].style.display = 'flex';
-    index++
-}
 
-function prevSlide() {
-    reset();
-    slides[index].style.display = 'flex';
-    index--
-}
+
+
+
+
+
+
 
 
 
